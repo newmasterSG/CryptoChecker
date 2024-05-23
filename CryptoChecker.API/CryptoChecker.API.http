@@ -1,0 +1,14 @@
+@CryptoChecker.API_HostAddress = https://localhost:7129
+
+GET {{CryptoChecker.API_HostAddress}}/cryptocurrency{pageNumber}
+Accept: application/json
+Content-Type: application/json
+###
+
+GET {{CryptoChecker.API_HostAddress}}/cryptocurrency{cryptoName:alpha}
+
+###
+
+POST {{CryptoChecker.API_HostAddress}}/cryptocurrency
+
+###

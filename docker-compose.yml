@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:latest
+    environment : 
+      SA_PASSWORD: "YourStrong@Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+  cryptochecker.api:
+    image: ${DOCKER_REGISTRY-}cryptocheckerapi
+    build:
+      context: .
+      dockerfile: CryptoChecker.API/Dockerfile
+    links:
+      - sqlserver
+    depends_on: 
+      - sqlserver
+    restart: always
