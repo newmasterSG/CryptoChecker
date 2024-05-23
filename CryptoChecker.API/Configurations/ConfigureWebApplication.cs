@@ -16,8 +16,6 @@ namespace CryptoChecker.API.Configurations
 
             app.UseWebSockets(webSocketOptions);
 
-
-
             app.UseSwagger();
             app.UseSwaggerUI();
 
