@@ -1,1 +1,3 @@
 # CryptoChecker
+
+Initial data for symbols takes a very long time to load http request (there are 60000 approximately objects) and will take the same long time to insert it into the database for the first time, please wait 10 minutes after starting the application. Also, to check how the obtaining of historical prices works, it is better to wait after background worker, because it takes a lot of time for http client and it is likely to generate 429 code, so after the worker 2 minutes you should wait.
